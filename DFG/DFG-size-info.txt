@@ -1,0 +1,14 @@
+Test images: 1703
+Train images: 13970
+Train-difficult images: 14029
+DFG-tsd-aug-dataset: 15673
+Failed train instances: 366
+Failed test instances: 1
+Ignored train instances: 0
+Ignored test instances: 0
+Ignored train labels: 0
+Ignored test labels: 0
+DFG-tsr-aug-train-dataset instances: 40274
+DFG-tsr-aug-test-dataset instances: 4392
+All instances except failed and ignored instances: 44666
+All instances (with failed and ignored): 45033

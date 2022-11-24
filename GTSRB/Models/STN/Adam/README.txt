@@ -1,0 +1,1 @@
+lr=1e-4, scheduler 20 epochs

@@ -1,0 +1,23 @@
+CNN
+CNN - Adam: test loss, test accuracy = 0.5258, 0.9057  - precision_1: 0.9249 - recall_1: 0.8978 - f1_score: 0.9106
+CNN - RMSprop: test loss, test accuracy = 0.5265, 0.8716 - precision: 0.9428 - recall: 0.8372 - f1_score: 0.8848
+CNN - SGD: test loss, test accuracy = 0.582, 0.8597 - precision: 0.9306 - recall: 0.8240 - f1_score: 0.8709
+CNN - SGDW: test loss, test accuracy = 0.9587, 0.7903  - precision: 0.9691 - recall: 0.6432 - f1_score: 0.7639
+--------------------
+STN
+STN - Adam: test loss, test accuracy = 0.6045, 0.8978 - precision: 0.9150 - recall: 0.8925 - f1_score: 0.9027
+STN - RMSprop: test loss, test accuracy = 0.594, 0.8695 - precision: 0.9209 - recall: 0.8488 - f1_score: 0.8811
+STN - SGD: test loss, test accuracy = 0.7088, 0.8522  - precision: 0.9113 - recall: 0.8329 - f1_score: 0.8682
+STN - SGDW: test loss, test accuracy = 0.8527, 0.821 - precision: 0.9610 - recall: 0.7341 - f1_score: 0.8250
+--------------------
+ViT
+ViT - Adam: test loss, test accuracy = 0.6815, 0.862 - precision_1: 0.8971 - recall_1: 0.8454 - f1_score: 0.8696
+ViT - RMSprop: test loss, test accuracy = 0.7059, 0.8447 - precision: 0.8988 - recall: 0.8190 - f1_score: 0.8545
+ViT - SGD: test loss, test accuracy = 0.6944, 0.8383 - precision: 0.9004 - recall: 0.8172 - f1_score: 0.8542
+ViT - SGDW: test loss, test accuracy = 0.6742, 0.8327 - precision: 0.9311 - recall: 0.7876 - f1_score: 0.8498
+--------------------
+ViT_SPT_LSA
+ViT_SPT_LSA - Adam: test loss, test accuracy = 0.552, 0.875  - precision: 0.9152 - recall: 0.8629 - f1_score: 0.8875
+ViT_SPT_LSA - RMSprop: test loss, test accuracy = 0.5792, 0.8686 - precision: 0.9210 - recall: 0.8493 - f1_score: 0.8817
+ViT_SPT_LSA - SGD: test loss, test accuracy = 0.566, 0.8645 - precision: 0.9235 - recall: 0.8327 - f1_score: 0.8738
+ViT_SPT_LSA - SGDW: test loss, test accuracy = 0.5283, 0.8648  - precision_2: 0.9385 - recall_2: 0.8265 - f1_score: 0.8768

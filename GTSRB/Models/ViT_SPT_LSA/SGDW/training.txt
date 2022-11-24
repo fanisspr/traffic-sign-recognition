@@ -1,0 +1,208 @@
+Results saved to: ./data/00004-val-train
+Model: "model"
+__________________________________________________________________________________________________
+ Layer (type)                   Output Shape         Param #     Connected to                     
+==================================================================================================
+ input_1 (InputLayer)           [(None, 48, 48, 3)]  0           []                               
+                                                                                                  
+ data_augmentation (Sequential)  (None, 48, 48, 3)   0           ['input_1[0][0]']                
+                                                                                                  
+ shifted_patch_tokenization_1 (  ((None, 144, 32),   8192        ['data_augmentation[0][0]']      
+ ShiftedPatchTokenization)       (None, 12, 12, 240                                               
+                                ))                                                                
+                                                                                                  
+ patch_encoder (PatchEncoder)   (None, 144, 32)      4608        ['shifted_patch_tokenization_1[0]
+                                                                 [0]']                            
+                                                                                                  
+ layer_normalization_2 (LayerNo  (None, 144, 32)     64          ['patch_encoder[0][0]']          
+ rmalization)                                                                                     
+                                                                                                  
+ multi_head_attention_lsa (Mult  (None, 144, 32)     25185       ['layer_normalization_2[0][0]',  
+ iHeadAttentionLSA)                                               'layer_normalization_2[0][0]']  
+                                                                                                  
+ add (Add)                      (None, 144, 32)      0           ['multi_head_attention_lsa[0][0]'
+                                                                 , 'patch_encoder[0][0]']         
+                                                                                                  
+ layer_normalization_3 (LayerNo  (None, 144, 32)     64          ['add[0][0]']                    
+ rmalization)                                                                                     
+                                                                                                  
+ dense_2 (Dense)                (None, 144, 64)      2112        ['layer_normalization_3[0][0]']  
+                                                                                                  
+ dropout (Dropout)              (None, 144, 64)      0           ['dense_2[0][0]']                
+                                                                                                  
+ dense_3 (Dense)                (None, 144, 32)      2080        ['dropout[0][0]']                
+                                                                                                  
+ dropout_1 (Dropout)            (None, 144, 32)      0           ['dense_3[0][0]']                
+                                                                                                  
+ add_1 (Add)                    (None, 144, 32)      0           ['dropout_1[0][0]',              
+                                                                  'add[0][0]']                    
+                                                                                                  
+ layer_normalization_4 (LayerNo  (None, 144, 32)     64          ['add_1[0][0]']                  
+ rmalization)                                                                                     
+                                                                                                  
+ multi_head_attention_lsa_1 (Mu  (None, 144, 32)     25185       ['layer_normalization_4[0][0]',  
+ ltiHeadAttentionLSA)                                             'layer_normalization_4[0][0]']  
+                                                                                                  
+ add_2 (Add)                    (None, 144, 32)      0           ['multi_head_attention_lsa_1[0][0
+                                                                 ]',                              
+                                                                  'add_1[0][0]']                  
+                                                                                                  
+ layer_normalization_5 (LayerNo  (None, 144, 32)     64          ['add_2[0][0]']                  
+ rmalization)                                                                                     
+                                                                                                  
+ dense_4 (Dense)                (None, 144, 64)      2112        ['layer_normalization_5[0][0]']  
+                                                                                                  
+ dropout_2 (Dropout)            (None, 144, 64)      0           ['dense_4[0][0]']                
+                                                                                                  
+ dense_5 (Dense)                (None, 144, 32)      2080        ['dropout_2[0][0]']              
+                                                                                                  
+ dropout_3 (Dropout)            (None, 144, 32)      0           ['dense_5[0][0]']                
+                                                                                                  
+ add_3 (Add)                    (None, 144, 32)      0           ['dropout_3[0][0]',              
+                                                                  'add_2[0][0]']                  
+                                                                                                  
+ layer_normalization_6 (LayerNo  (None, 144, 32)     64          ['add_3[0][0]']                  
+ rmalization)                                                                                     
+                                                                                                  
+ multi_head_attention_lsa_2 (Mu  (None, 144, 32)     25185       ['layer_normalization_6[0][0]',  
+ ltiHeadAttentionLSA)                                             'layer_normalization_6[0][0]']  
+                                                                                                  
+ add_4 (Add)                    (None, 144, 32)      0           ['multi_head_attention_lsa_2[0][0
+                                                                 ]',                              
+                                                                  'add_3[0][0]']                  
+                                                                                                  
+ layer_normalization_7 (LayerNo  (None, 144, 32)     64          ['add_4[0][0]']                  
+ rmalization)                                                                                     
+                                                                                                  
+ dense_6 (Dense)                (None, 144, 64)      2112        ['layer_normalization_7[0][0]']  
+                                                                                                  
+ dropout_4 (Dropout)            (None, 144, 64)      0           ['dense_6[0][0]']                
+                                                                                                  
+ dense_7 (Dense)                (None, 144, 32)      2080        ['dropout_4[0][0]']              
+                                                                                                  
+ dropout_5 (Dropout)            (None, 144, 32)      0           ['dense_7[0][0]']                
+                                                                                                  
+ add_5 (Add)                    (None, 144, 32)      0           ['dropout_5[0][0]',              
+                                                                  'add_4[0][0]']                  
+                                                                                                  
+ layer_normalization_8 (LayerNo  (None, 144, 32)     64          ['add_5[0][0]']                  
+ rmalization)                                                                                     
+                                                                                                  
+ multi_head_attention_lsa_3 (Mu  (None, 144, 32)     25185       ['layer_normalization_8[0][0]',  
+ ltiHeadAttentionLSA)                                             'layer_normalization_8[0][0]']  
+                                                                                                  
+ add_6 (Add)                    (None, 144, 32)      0           ['multi_head_attention_lsa_3[0][0
+                                                                 ]',                              
+                                                                  'add_5[0][0]']                  
+                                                                                                  
+ layer_normalization_9 (LayerNo  (None, 144, 32)     64          ['add_6[0][0]']                  
+ rmalization)                                                                                     
+                                                                                                  
+ dense_8 (Dense)                (None, 144, 64)      2112        ['layer_normalization_9[0][0]']  
+                                                                                                  
+ dropout_6 (Dropout)            (None, 144, 64)      0           ['dense_8[0][0]']                
+                                                                                                  
+ dense_9 (Dense)                (None, 144, 32)      2080        ['dropout_6[0][0]']              
+                                                                                                  
+ dropout_7 (Dropout)            (None, 144, 32)      0           ['dense_9[0][0]']                
+                                                                                                  
+ add_7 (Add)                    (None, 144, 32)      0           ['dropout_7[0][0]',              
+                                                                  'add_6[0][0]']                  
+                                                                                                  
+ layer_normalization_10 (LayerN  (None, 144, 32)     64          ['add_7[0][0]']                  
+ ormalization)                                                                                    
+                                                                                                  
+ flatten (Flatten)              (None, 4608)         0           ['layer_normalization_10[0][0]'] 
+                                                                                                  
+ dropout_8 (Dropout)            (None, 4608)         0           ['flatten[0][0]']                
+                                                                                                  
+ dense_10 (Dense)               (None, 512)          2359808     ['dropout_8[0][0]']              
+                                                                                                  
+ dropout_9 (Dropout)            (None, 512)          0           ['dense_10[0][0]']               
+                                                                                                  
+ dense_11 (Dense)               (None, 256)          131328      ['dropout_9[0][0]']              
+                                                                                                  
+ dropout_10 (Dropout)           (None, 256)          0           ['dense_11[0][0]']               
+                                                                                                  
+ dense_12 (Dense)               (None, 43)           11051       ['dropout_10[0][0]']             
+                                                                                                  
+==================================================================================================
+Total params: 2,633,071
+Trainable params: 2,633,071
+Non-trainable params: 0
+__________________________________________________________________________________________________
+Epoch 1/100
+628/628 [==============================] - 40s 54ms/step - loss: 1.4781 - accuracy: 0.5816 - precision: 0.8154 - recall: 0.4607 - f1_score: 0.5561 - val_loss: 0.3033 - val_accuracy: 0.9149 - val_precision: 0.9613 - val_recall: 0.8638 - val_f1_score: 0.9093 - lr: 0.0100
+Epoch 2/100
+628/628 [==============================] - 34s 53ms/step - loss: 0.5603 - accuracy: 0.8274 - precision: 0.8969 - recall: 0.7687 - f1_score: 0.8269 - val_loss: 0.1709 - val_accuracy: 0.9579 - val_precision: 0.9820 - val_recall: 0.9325 - val_f1_score: 0.9564 - lr: 0.0100
+Epoch 3/100
+628/628 [==============================] - 33s 52ms/step - loss: 0.3939 - accuracy: 0.8787 - precision: 0.9229 - recall: 0.8385 - f1_score: 0.8783 - val_loss: 0.1158 - val_accuracy: 0.9702 - val_precision: 0.9849 - val_recall: 0.9560 - val_f1_score: 0.9701 - lr: 0.0100
+Epoch 4/100
+628/628 [==============================] - 32s 52ms/step - loss: 0.3176 - accuracy: 0.9020 - precision: 0.9357 - recall: 0.8729 - f1_score: 0.9028 - val_loss: 0.0822 - val_accuracy: 0.9795 - val_precision: 0.9882 - val_recall: 0.9704 - val_f1_score: 0.9791 - lr: 0.0100
+Epoch 5/100
+628/628 [==============================] - 32s 51ms/step - loss: 0.2798 - accuracy: 0.9147 - precision: 0.9418 - recall: 0.8886 - f1_score: 0.9141 - val_loss: 0.0698 - val_accuracy: 0.9850 - val_precision: 0.9921 - val_recall: 0.9745 - val_f1_score: 0.9831 - lr: 0.0100
+Epoch 6/100
+628/628 [==============================] - 33s 52ms/step - loss: 0.2292 - accuracy: 0.9309 - precision: 0.9541 - recall: 0.9107 - f1_score: 0.9316 - val_loss: 0.0577 - val_accuracy: 0.9875 - val_precision: 0.9941 - val_recall: 0.9801 - val_f1_score: 0.9870 - lr: 0.0100
+Epoch 7/100
+628/628 [==============================] - 32s 52ms/step - loss: 0.2082 - accuracy: 0.9358 - precision: 0.9535 - recall: 0.9182 - f1_score: 0.9353 - val_loss: 0.0485 - val_accuracy: 0.9889 - val_precision: 0.9932 - val_recall: 0.9838 - val_f1_score: 0.9884 - lr: 0.0100
+Epoch 8/100
+628/628 [==============================] - 32s 51ms/step - loss: 0.1906 - accuracy: 0.9417 - precision: 0.9601 - recall: 0.9260 - f1_score: 0.9426 - val_loss: 0.0427 - val_accuracy: 0.9897 - val_precision: 0.9929 - val_recall: 0.9862 - val_f1_score: 0.9895 - lr: 0.0100
+Epoch 9/100
+628/628 [==============================] - 33s 52ms/step - loss: 0.1653 - accuracy: 0.9488 - precision: 0.9629 - recall: 0.9351 - f1_score: 0.9487 - val_loss: 0.0371 - val_accuracy: 0.9917 - val_precision: 0.9955 - val_recall: 0.9889 - val_f1_score: 0.9922 - lr: 0.0100
+Epoch 10/100
+628/628 [==============================] - 33s 52ms/step - loss: 0.1563 - accuracy: 0.9528 - precision: 0.9664 - recall: 0.9399 - f1_score: 0.9528 - val_loss: 0.0350 - val_accuracy: 0.9921 - val_precision: 0.9955 - val_recall: 0.9895 - val_f1_score: 0.9925 - lr: 0.0100
+Epoch 11/100
+628/628 [==============================] - 32s 52ms/step - loss: 0.1438 - accuracy: 0.9571 - precision: 0.9687 - recall: 0.9452 - f1_score: 0.9568 - val_loss: 0.0293 - val_accuracy: 0.9925 - val_precision: 0.9958 - val_recall: 0.9907 - val_f1_score: 0.9932 - lr: 0.0100
+Epoch 12/100
+628/628 [==============================] - 32s 51ms/step - loss: 0.1320 - accuracy: 0.9612 - precision: 0.9713 - recall: 0.9509 - f1_score: 0.9609 - val_loss: 0.0296 - val_accuracy: 0.9931 - val_precision: 0.9959 - val_recall: 0.9917 - val_f1_score: 0.9938 - lr: 0.0100
+Epoch 13/100
+628/628 [==============================] - 32s 52ms/step - loss: 0.1257 - accuracy: 0.9623 - precision: 0.9732 - recall: 0.9521 - f1_score: 0.9624 - val_loss: 0.0264 - val_accuracy: 0.9926 - val_precision: 0.9953 - val_recall: 0.9915 - val_f1_score: 0.9933 - lr: 0.0100
+Epoch 14/100
+628/628 [==============================] - 33s 53ms/step - loss: 0.1176 - accuracy: 0.9645 - precision: 0.9743 - recall: 0.9556 - f1_score: 0.9647 - val_loss: 0.0244 - val_accuracy: 0.9948 - val_precision: 0.9971 - val_recall: 0.9927 - val_f1_score: 0.9949 - lr: 0.0100
+Epoch 15/100
+628/628 [==============================] - 32s 52ms/step - loss: 0.1118 - accuracy: 0.9665 - precision: 0.9757 - recall: 0.9575 - f1_score: 0.9664 - val_loss: 0.0247 - val_accuracy: 0.9946 - val_precision: 0.9969 - val_recall: 0.9936 - val_f1_score: 0.9953 - lr: 0.0100
+Epoch 16/100
+628/628 [==============================] - 32s 52ms/step - loss: 0.1055 - accuracy: 0.9674 - precision: 0.9759 - recall: 0.9595 - f1_score: 0.9676 - val_loss: 0.0216 - val_accuracy: 0.9955 - val_precision: 0.9981 - val_recall: 0.9948 - val_f1_score: 0.9964 - lr: 0.0100
+Epoch 17/100
+628/628 [==============================] - 32s 52ms/step - loss: 0.1010 - accuracy: 0.9699 - precision: 0.9781 - recall: 0.9616 - f1_score: 0.9697 - val_loss: 0.0211 - val_accuracy: 0.9954 - val_precision: 0.9976 - val_recall: 0.9945 - val_f1_score: 0.9960 - lr: 0.0100
+Epoch 18/100
+628/628 [==============================] - 33s 53ms/step - loss: 0.0955 - accuracy: 0.9709 - precision: 0.9780 - recall: 0.9629 - f1_score: 0.9703 - val_loss: 0.0219 - val_accuracy: 0.9953 - val_precision: 0.9972 - val_recall: 0.9943 - val_f1_score: 0.9957 - lr: 0.0100
+Epoch 19/100
+628/628 [==============================] - 33s 52ms/step - loss: 0.0998 - accuracy: 0.9704 - precision: 0.9783 - recall: 0.9629 - f1_score: 0.9705 - val_loss: 0.0193 - val_accuracy: 0.9959 - val_precision: 0.9980 - val_recall: 0.9948 - val_f1_score: 0.9963 - lr: 0.0100
+Epoch 20/100
+628/628 [==============================] - 32s 52ms/step - loss: 0.0920 - accuracy: 0.9723 - precision: 0.9788 - recall: 0.9656 - f1_score: 0.9721 - val_loss: 0.0213 - val_accuracy: 0.9946 - val_precision: 0.9967 - val_recall: 0.9936 - val_f1_score: 0.9951 - lr: 0.0100
+Epoch 21/100
+628/628 [==============================] - 32s 51ms/step - loss: 0.0890 - accuracy: 0.9733 - precision: 0.9800 - recall: 0.9673 - f1_score: 0.9734 - val_loss: 0.0192 - val_accuracy: 0.9954 - val_precision: 0.9972 - val_recall: 0.9948 - val_f1_score: 0.9960 - lr: 0.0100
+Epoch 22/100
+628/628 [==============================] - 33s 53ms/step - loss: 0.0839 - accuracy: 0.9744 - precision: 0.9805 - recall: 0.9680 - f1_score: 0.9742 - val_loss: 0.0184 - val_accuracy: 0.9960 - val_precision: 0.9981 - val_recall: 0.9949 - val_f1_score: 0.9965 - lr: 0.0090
+Epoch 23/100
+628/628 [==============================] - 32s 52ms/step - loss: 0.0760 - accuracy: 0.9777 - precision: 0.9836 - recall: 0.9718 - f1_score: 0.9776 - val_loss: 0.0162 - val_accuracy: 0.9969 - val_precision: 0.9990 - val_recall: 0.9960 - val_f1_score: 0.9975 - lr: 0.0082
+Epoch 24/100
+628/628 [==============================] - 33s 52ms/step - loss: 0.0714 - accuracy: 0.9796 - precision: 0.9851 - recall: 0.9736 - f1_score: 0.9792 - val_loss: 0.0155 - val_accuracy: 0.9967 - val_precision: 0.9985 - val_recall: 0.9954 - val_f1_score: 0.9969 - lr: 0.0074
+Epoch 25/100
+628/628 [==============================] - 32s 51ms/step - loss: 0.0694 - accuracy: 0.9792 - precision: 0.9851 - recall: 0.9735 - f1_score: 0.9792 - val_loss: 0.0161 - val_accuracy: 0.9967 - val_precision: 0.9982 - val_recall: 0.9955 - val_f1_score: 0.9968 - lr: 0.0067
+Epoch 26/100
+628/628 [==============================] - 33s 53ms/step - loss: 0.0678 - accuracy: 0.9812 - precision: 0.9865 - recall: 0.9752 - f1_score: 0.9808 - val_loss: 0.0165 - val_accuracy: 0.9964 - val_precision: 0.9980 - val_recall: 0.9953 - val_f1_score: 0.9966 - lr: 0.0061
+Epoch 27/100
+628/628 [==============================] - 33s 52ms/step - loss: 0.0680 - accuracy: 0.9812 - precision: 0.9864 - recall: 0.9749 - f1_score: 0.9806 - val_loss: 0.0145 - val_accuracy: 0.9976 - val_precision: 0.9990 - val_recall: 0.9966 - val_f1_score: 0.9978 - lr: 0.0055
+Epoch 28/100
+628/628 [==============================] - 33s 52ms/step - loss: 0.0638 - accuracy: 0.9830 - precision: 0.9876 - recall: 0.9776 - f1_score: 0.9825 - val_loss: 0.0151 - val_accuracy: 0.9967 - val_precision: 0.9983 - val_recall: 0.9958 - val_f1_score: 0.9971 - lr: 0.0050
+Epoch 29/100
+628/628 [==============================] - 33s 53ms/step - loss: 0.0661 - accuracy: 0.9821 - precision: 0.9874 - recall: 0.9762 - f1_score: 0.9817 - val_loss: 0.0167 - val_accuracy: 0.9968 - val_precision: 0.9990 - val_recall: 0.9954 - val_f1_score: 0.9972 - lr: 0.0045
+Epoch 30/100
+628/628 [==============================] - 33s 53ms/step - loss: 0.0674 - accuracy: 0.9825 - precision: 0.9883 - recall: 0.9751 - f1_score: 0.9816 - val_loss: 0.0151 - val_accuracy: 0.9973 - val_precision: 0.9991 - val_recall: 0.9963 - val_f1_score: 0.9977 - lr: 0.0041
+Epoch 31/100
+628/628 [==============================] - 32s 52ms/step - loss: 0.0651 - accuracy: 0.9843 - precision: 0.9894 - recall: 0.9780 - f1_score: 0.9836 - val_loss: 0.0164 - val_accuracy: 0.9969 - val_precision: 0.9986 - val_recall: 0.9954 - val_f1_score: 0.9970 - lr: 0.0037
+Epoch 32/100
+628/628 [==============================] - 32s 52ms/step - loss: 0.0693 - accuracy: 0.9827 - precision: 0.9882 - recall: 0.9760 - f1_score: 0.9820 - val_loss: 0.0169 - val_accuracy: 0.9967 - val_precision: 0.9990 - val_recall: 0.9958 - val_f1_score: 0.9974 - lr: 0.0033
+Epoch 33/100
+628/628 [==============================] - 33s 52ms/step - loss: 0.0729 - accuracy: 0.9813 - precision: 0.9874 - recall: 0.9735 - f1_score: 0.9803 - val_loss: 0.0186 - val_accuracy: 0.9963 - val_precision: 0.9981 - val_recall: 0.9948 - val_f1_score: 0.9964 - lr: 0.0030
+Epoch 34/100
+628/628 [==============================] - 33s 53ms/step - loss: 0.0746 - accuracy: 0.9819 - precision: 0.9884 - recall: 0.9730 - f1_score: 0.9805 - val_loss: 0.0169 - val_accuracy: 0.9972 - val_precision: 0.9983 - val_recall: 0.9960 - val_f1_score: 0.9972 - lr: 0.0027
+Epoch 35/100
+628/628 [==============================] - 33s 53ms/step - loss: 0.0813 - accuracy: 0.9802 - precision: 0.9877 - recall: 0.9710 - f1_score: 0.9792 - val_loss: 0.0188 - val_accuracy: 0.9968 - val_precision: 0.9992 - val_recall: 0.9953 - val_f1_score: 0.9972 - lr: 0.0025
+Epoch 36/100
+628/628 [==============================] - 33s 52ms/step - loss: 0.0849 - accuracy: 0.9797 - precision: 0.9874 - recall: 0.9701 - f1_score: 0.9786 - val_loss: 0.0189 - val_accuracy: 0.9971 - val_precision: 0.9991 - val_recall: 0.9959 - val_f1_score: 0.9975 - lr: 0.0022
+Epoch 37/100
+628/628 [==============================] - 33s 52ms/step - loss: 0.0890 - accuracy: 0.9795 - precision: 0.9874 - recall: 0.9681 - f1_score: 0.9776 - val_loss: 0.0197 - val_accuracy: 0.9964 - val_precision: 0.9983 - val_recall: 0.9949 - val_f1_score: 0.9966 - lr: 0.0020
+Elapsed time: 0:20.3:18.91

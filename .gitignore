@@ -1,0 +1,32 @@
+__pycache__/
+*.pdf
+*.zip
+old files/
+Notebooks*/
+presentations/
+Side-code/
+Sources-Articles/
+DFG/DFG*/
+GTSRB/ViT_grayscale
+GTSRB/Errors.txt
+GTSRB/GTSRB.xlsx
+
+*.data*
+*.index
+*.hdf5
+**/Models/**/*Adam*
+**/Models/**/*RMSprop*
+**/Models/**/*SGD*
+**/Models/**/*SGDW*
+**/Models/**/ViT 49M params
+!**/Models/**/Adam/
+!**/Models/**/RMSprop/
+!**/Models/**/SGD/
+!**/Models/**/SGDW/
+
+images/*
+!images/DFG
+!images/GTSRB
+!images/SPT & LSA_architectures.png
+!images/stn_architec.png
+!images/ViT_image.png

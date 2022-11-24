@@ -1,0 +1,2 @@
+model_checkpoint_path: "model-27-acc-0.981-val_loss-0.0145"
+all_model_checkpoint_paths: "model-27-acc-0.981-val_loss-0.0145"
