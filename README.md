@@ -30,3 +30,7 @@ Contains code for various tasks like the extracting the traffic sign images from
 ## images/
 
 Contains images created during the experiments or images from papers.
+
+## ipynb/
+
+Contains jupyter notebooks with the code of the models that were trained and tested on each dataset.
